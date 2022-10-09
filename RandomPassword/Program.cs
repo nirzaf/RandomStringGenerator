@@ -2,13 +2,11 @@
 
 Console.WriteLine("Testing Random String Generator....");
 
-// Generate a list of random string and check if there are any duplicates
-
 var stringList = new List<string>();
 
-var begin = DateTime.Now;
+int count = 5000000;
 
-for (int i = 0; i < 5000000; i++)
+for (int i = 0; i < count; i++)
 {
     stringList.Add(RandomString.Generate());
 }
@@ -20,15 +18,9 @@ var duplicates = stringList.GroupBy(x => x)
                            .Select(y => y.Key)
                            .ToList();
 
-Console.WriteLine(duplicates.Count > 0 ? $"{duplicates.Count} : Duplicates found" : "No duplicates found");
-
-//print the first 10 items in the list
-
-Console.WriteLine(string.Join(",  ", stringList.Take(10)));
-
-var end = DateTime.Now;
-
-Console.WriteLine($"Total Time taken: {end - begin}");
+Console.WriteLine(duplicates.Count > 0
+    ? $"{duplicates.Count} : Duplicates found in {count} strings"
+    : $"No duplicates found in {count} strings");
 
 Console.ReadLine();
 
