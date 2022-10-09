@@ -7,7 +7,7 @@ var begin = DateTime.Now;
 HashSet<string> hashList1 = new HashSet<string>();
 HashSet<string> hashList2 = new HashSet<string>();
 
-int count = 10000000; // 10 million
+int count = 1000000; // 1 million
 
 for (int i = 0; i < count; i++)
 {
