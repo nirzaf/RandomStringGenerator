@@ -1,10 +1,15 @@
 ﻿using System.Text;
 
+using BenchmarkDotNet.Attributes;
+
 namespace RandomPassword;
 
+[MemoryDiagnoser()]
 public class RandomString
 {
-    public static string Generate()
+    
+    [Benchmark]
+    public string Generate()
     {
         StringBuilder builder = new();
         Random random = new();
@@ -41,7 +46,8 @@ public class RandomString
         return builder.ToString();
     }
 
-    public static string GenerateString()
+    [Benchmark]
+    public string GenerateString()
     {
         string str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         StringBuilder builder = new();
@@ -51,5 +57,16 @@ public class RandomString
             builder.Append(str[rnd.Next(0, str.Length)]);
         }
         return builder.ToString();
+    }
+    
+    public HashSet<string> GenerateRandomString()
+    {
+        int count = 1000000;
+        HashSet<string> randomStrings = new();
+        for (int i = 0; i < count; i++)
+        {
+            randomStrings.Add(Generate());
+        }
+        return randomStrings;
     }
 }
