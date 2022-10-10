@@ -2,19 +2,21 @@
 
 namespace RandomPassword;
 
-public class RandomString
+public static class RandomString
 {
     public static string Generate()
     {
         StringBuilder builder = new();
         Random random = new();
         char ch;
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 4; i++)
         {
 
             ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
             builder.Append(ch);
         }
+        
+        Console.WriteLine(builder.ToString());
 
         var num = random.Next(100, 1000);
 
