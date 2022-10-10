@@ -9,7 +9,7 @@ public class RandomString
         StringBuilder builder = new();
         Random random = new();
         char ch;
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 5; i++)
         {
 
             ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
@@ -43,12 +43,12 @@ public class RandomString
 
     public static string GenerateString()
     {
-        string str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        const string str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         StringBuilder builder = new();
-        Random rnd = new();
-        for (int i = 0; i < 10; i++)
+        Random random = new();
+        for (int i = 0; i < 11; i++)
         {
-            builder.Append(str[rnd.Next(0, str.Length)]);
+            builder.Append(str[random.Next(0, str.Length)]);
         }
         return builder.ToString();
     }

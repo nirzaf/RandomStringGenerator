@@ -15,6 +15,20 @@ for (int i = 0; i < count; i++)
     hashList2.Add(RandomString.GenerateString());
 }
 
+
+//print 10 strings from both list 
+Console.WriteLine("RandomString.Generate()");
+foreach (var item in hashList1.Take(10))
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("RandomString.GenerateString()");
+foreach (var item in hashList2.Take(10))
+{
+    Console.WriteLine(item);
+}
+
 Console.WriteLine(hashList1.Count == count
     ? $"No duplicates found using RandomString.Generate() out of {count} strings"
     : $"{count - hashList1.Count} Duplicates found using RandomString.Generate() out of {count} strings");
