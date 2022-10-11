@@ -15,8 +15,6 @@ public static class RandomString
             ch = Convert.ToChar(Convert.ToInt32(Math.Floor(26 * random.NextDouble() + 65)));
             builder.Append(ch);
         }
-        
-        Console.WriteLine(builder.ToString());
 
         var num = random.Next(100, 1000);
 

@@ -16,15 +16,15 @@ for (int i = 0; i < count; i++)
 }
 
 
-//print 10 strings from both list 
+//print 3 strings from both list 
 Console.WriteLine("RandomString.Generate()");
-foreach (var item in hashList1.Take(10))
+foreach (var item in hashList1.Take(3))
 {
     Console.WriteLine(item);
 }
 
 Console.WriteLine("RandomString.GenerateString()");
-foreach (var item in hashList2.Take(10))
+foreach (var item in hashList2.Take(3))
 {
     Console.WriteLine(item);
 }
